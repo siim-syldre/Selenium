@@ -22,7 +22,7 @@ username = driver.find_element(By.ID, 'username')
 username.send_keys('SiimS')
 
 pw = driver.find_element(By.ID, 'password')
-pw.send_keys('NorsDST' + Keys.ENTER)
+pw.send_keys('testestest' + Keys.ENTER)
 
 WebDriverWait(driver, 5).until(
     EC.presence_of_element_located((By.ID, 'searchfield'))
