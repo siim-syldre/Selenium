@@ -38,7 +38,10 @@ for project in projects:
     )
 
     driver.find_element(By.ID, '__button_design_inner').click()
-    time.sleep(2)
+
+    WebDriverWait(driver, 10).until(
+        EC.presence_of_element_located((By.ID, '__button_des_exp'))
+    )
     driver.find_element(By.ID, '__button_des_exp').click()
 
     time.sleep(3)
@@ -81,11 +84,13 @@ for project in projects:
     driver.switch_to.frame(iframe2)
 
     time.sleep(2)
-    """folder = driver.find_element(By.ID, 'chkDisplayFolders')
+    """
+    folder = driver.find_element(By.ID, 'chkDisplayFolders')
     folder.click()
     driver.find_element(By.ID, 'chkDisplayEmails').click()
     driver.find_element(By.ID, 'chkDisplayPageSkips').click()
-    driver.find_element(By.ID, 'chkDisplayInvitations').click()"""
+    driver.find_element(By.ID, 'chkDisplayInvitations').click()
+    """
     driver.find_element(By.ID, 'lstMultiLanguage').click()
     driver.find_element(By.XPATH, '//*[contains(text(), "All languages")]').click()
 
