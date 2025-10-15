@@ -38,7 +38,7 @@ for project in projects:
     )
 
     driver.find_element(By.ID, '__button_design_inner').click()
-
+    time.sleep(2)
     driver.find_element(By.ID, '__button_des_exp').click()
 
     time.sleep(3)
@@ -63,8 +63,7 @@ for project in projects:
     submit.click()
 
     WebDriverWait(driver, 90).until(
-        EC.presence_of_element_located((By.XPATH,
-'//*[contains(text(), "Task completed")]'))
+        EC.presence_of_element_located((By.XPATH, '//*[contains(text(), "Task completed")]'))
     )
 
     submit2 = driver.find_element(By.ID, 'okbutton')
@@ -88,8 +87,7 @@ for project in projects:
     driver.find_element(By.ID, 'chkDisplayPageSkips').click()
     driver.find_element(By.ID, 'chkDisplayInvitations').click()"""
     driver.find_element(By.ID, 'lstMultiLanguage').click()
-    driver.find_element(By.XPATH, '//*[contains(text(), "All
-languages")]').click()
+    driver.find_element(By.XPATH, '//*[contains(text(), "All languages")]').click()
 
     submit3 = driver.find_element(By.ID, 'btnExport')
     submit3.click()
